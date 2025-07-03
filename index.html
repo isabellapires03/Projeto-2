@@ -13,76 +13,11 @@
     <h1 id="ola">Olá!</h1>
 
     <main class="main">
-    <div class="container">
-        <div class="pasta">
-            <h1>Formulário de Valores</h1>
-  <form id="formulario">
-    <label for="valor1">Valor 1:</label>
-    <input type="text" id="valor1" required><br>
-
-    <label for="valor2">Valor 2:</label>
-    <input type="text" id="valor2" required><br>
-
-    <label for="valor3">Valor 3:</label>
-    <input type="text" id="valor3" required><br>
-
-    <label for="valor4">Valor 4:</label>
-    <input type="text" id="valor4" required><br>
-
-    <label for="valor5">Valor 5:</label>
-    <input type="text" id="valor5" required><br>
-
-    <button type="submit">Salvar em TXT</button>
-  </form>
-
-        </div>
-
-        <div class="pasta">
-            <h1>Manipulando Frutas</h1>
-
-  <input type="text" id="frutaInput" placeholder="Digite uma fruta" />
-  <button onclick="adicionarFruta()">Adicionar</button>
-
-  <h2>Frutas:</h2>
-  <p id="listaFrutas">[ ]</p>
-
-  <div class="botoes">
-    <button onclick="metodo('push')">Push (Adicionar ao final)</button>
-    <button onclick="metodo('pop')">Pop (Remover do final)</button>
-    <button onclick="metodo('shift')">Shift (Remover do início)</button>
-    <button onclick="metodo('unshift')">Unshift (Adicionar ao início)</button>
-    <button onclick="verificarBanana()">Includes('banana')</button>
-    <button onclick="mostrarIndex('uva')">IndexOf('uva')</button>
-    <button onclick="mostrarJoin()">Join(', ')</button>
-    <button onclick="mostrarSlice()">Slice(1, 3)</button>
-    <button onclick="fazerSplice()">Splice(1, 1)</button>
-    <button onclick="mapMaiusculas()">Map (MAIÚSCULAS)</button>
-    <button onclick="filtrarGrandes()">Filter (nome > 4 letras)</button>
-  </div>
-
-  <pre id="saida"></pre>
-        </div>
-
-        <div class="pasta">
-             <div class="container">
-        <div class="container__conteudo">
-            <div class="container__informacoes">
-                <div class="container__texto">
-                    <h1>Adivinhe o <span class="container__texto-azul">numero secreto</span></h1>
-                    <p class="texto__paragrafo">Escolha um número entre 1 a 10</p>
-                </div>
-                <input type="number" min="1" max="10" class="container__input">
-                <div class="chute container__botoes">
-                    <button onclick="verificarChute()" class="container__botao">Chutar</button>
-                    <button onclick="reiniciarJogo()" id="reiniciar" class="container__botao" disabled>Novo jogo</button>
-                </div>
-            </div>
-            <img src="./img/ia.png" alt="Uma pessoa olhando para a esquerda" class="container__imagem-pessoa" />
-        </div>
+    <div class="container-botoes">
+        <button onclick="iniciarJogoSoma()">Jogo da Soma</button>
+        <button onclick="iniciarJogoMedia()">Jogo da Média</button>
+        <button onclick="iniciarJogoNumeroSecreto()">Jogo do Número Secreto</button>
     </div>
-
-        </div>
-    </div> 
     </main>
 
     <footer>

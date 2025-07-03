@@ -1,165 +1,60 @@
-document.getElementById("formulario").addEventListener("submit", function (e) {
-  e.preventDefault();
+function iniciarJogoSoma() {
+  let num1 = parseInt(prompt('Digite o primeiro número:'));
+  let num2 = parseInt(prompt('Digite o segundo número:'));
 
-  // Coletar valores
-  const valores = [];
-  for (let i = 1; i <= 5; i++) {
-    const valor = document.getElementById(`valor${i}`).value.trim();
-    if (valor === "") {
-      alert(`O campo Valor ${i} está vazio.`);
-      return;
+  let resultado = num1 + num2;
+  alert('A soma dos números é: "' + resultado + '"');
+  let conteudo = document.querySelector('p');
+  conteudo.innerHTML = 'Jogo Finalizado!';
+  setTimeout(function () {
+    conteudo.innerHTML = '';
+  }, 5000);
+
+}
+
+function iniciarJogoMedia() {
+  alert("Bem-vindo ao Jogo da Média!");
+  let quantidade = prompt("Quantos números você quer digitar?");
+  quantidade = Number(quantidade);
+  if (quantidade <= 0 || quantidade === null || quantidade === "" || typeof quantidade !== "number") {
+    alert("Quantidade inválida. Tente novamente com um número maior que zero.");
+  } else {
+    let soma = 0;
+
+    for (let i = 1; i <= quantidade; i++) {
+      let entrada = prompt(`Digite o ${i}º número:`);
+      let numero = Number(entrada);
+
+      if (entrada.trim() === "" || entrada === null || isNaN(numero)) {
+        alert("Valor inválido. Digite um número.");
+        i--;
+        continue;
+      }
+
+      soma += numero;
     }
-    valores.push(valor);
+
+    let media = soma / quantidade;
+
+    alert(`A média calculada entre os ${quantidade} números digitados é: ${media.toFixed(2)}`);
   }
-
-  // Criar conteúdo do TXT
-  const conteudo = valores.map((v, i) => `Valor ${i + 1}: ${v}`).join("\n");
-
-  // Criar e baixar o arquivo TXT
-  const blob = new Blob([conteudo], { type: "text/plain;charset=utf-8" });
-  const link = document.createElement("a");
-  link.href = URL.createObjectURL(blob);
-  link.download = "valores.txt";
-  link.click();
-});
-
-
-let listaDeNumerosSorteados = [];
-let numeroLimite = 10;
-let numeroSecreto = gerarNumeroAleatorio();
-let tentativas = 1;
-
-function exibirTextoNaTela(tag, texto) {
-    let campo = document.querySelector(tag);
-    campo.innerHTML = texto;
-    responsiveVoice.speak(texto, 'Brazilian Portuguese Female', {rate:1.2});
 }
 
-function exibirMensagemInicial() {
-    exibirTextoNaTela('h1', 'Jogo do número secreto');
-    exibirTextoNaTela('p', 'Escolha um número entre 1 e 10');
-}
+function iniciarJogoNumeroSecreto() {
+  alert('Seja bem-vindo ao nosso jogo!');
+  let numeroSecreto = 7;
+  let chute;
+  let tentativas = 0;
+  while (chute != numeroSecreto) {
+    chute = parseInt(prompt('Escolha um número entre 1 e 10'));
+    tentativas++;
 
-exibirMensagemInicial();
-
-function verificarChute() {
-    let chute = document.querySelector('input').value;
-    
     if (chute == numeroSecreto) {
-        exibirTextoNaTela('h1', 'Acertou!');
-        let palavraTentativa = tentativas > 1 ? 'tentativas' : 'tentativa';
-        let mensagemTentativas = `Você descobriu o número secreto com ${tentativas} ${palavraTentativa}!`;
-        exibirTextoNaTela('p', mensagemTentativas);
-        document.getElementById('reiniciar').removeAttribute('disabled');
+      alert(`Parabéns! Você acertou o número secreto ${numeroSecreto} na tentativa ${tentativas}.`);
+    } else if (chute > numeroSecreto) {
+      alert(`O número secreto é menor que ${chute}. Tente novamente.`);
     } else {
-        if (chute > numeroSecreto) {
-            exibirTextoNaTela('p', 'O número secreto é menor');
-        } else {
-            exibirTextoNaTela('p', 'O número secreto é maior');
-        }
-        tentativas++;
-        limparCampo();
+      alert(`O número secreto é maior que ${chute}. Tente novamente.`);
     }
-}
-
-function gerarNumeroAleatorio() {
-    let numeroEscolhido = parseInt(Math.random() * numeroLimite + 1);
-    let quantidadeDeElementosNaLista = listaDeNumerosSorteados.length;
-
-    if (quantidadeDeElementosNaLista == numeroLimite) {
-        listaDeNumerosSorteados = [];
-    }
-    if (listaDeNumerosSorteados.includes(numeroEscolhido)) {
-        return gerarNumeroAleatorio();
-    } else {
-        listaDeNumerosSorteados.push(numeroEscolhido);
-        console.log(listaDeNumerosSorteados)
-        return numeroEscolhido;
-    }
-}
-
-function limparCampo() {
-    chute = document.querySelector('input');
-    chute.value = '';
-}
-
-function reiniciarJogo() {
-    numeroSecreto = gerarNumeroAleatorio();
-    limparCampo();
-    tentativas = 1;
-    exibirMensagemInicial();
-    document.getElementById('reiniciar').setAttribute('disabled', true)
-}
-
-let frutas = [];
-
-function atualizarLista() {
-  document.getElementById('listaFrutas').textContent = JSON.stringify(frutas);
-}
-
-function adicionarFruta() {
-  const input = document.getElementById('frutaInput');
-  const valor = input.value.trim();
-
-  if (valor) {
-    frutas.push(valor);
-    input.value = "";
-    atualizarLista();
   }
-}
-
-function metodo(acao) {
-  if (acao === 'push') {
-    const fruta = prompt("Digite uma fruta para adicionar no final:");
-    if (fruta) frutas.push(fruta);
-  } else if (acao === 'pop') {
-    frutas.pop();
-  } else if (acao === 'shift') {
-    frutas.shift();
-  } else if (acao === 'unshift') {
-    const fruta = prompt("Digite uma fruta para adicionar no início:");
-    if (fruta) frutas.unshift(fruta);
-  }
-  atualizarLista();
-}
-
-function verificarBanana() {
-  const resultado = frutas.includes('banana')
-    ? "🍌 Banana está no array!"
-    : "🚫 Banana NÃO está no array.";
-  document.getElementById('saida').textContent = resultado;
-}
-
-function mostrarIndex(fruta) {
-  const index = frutas.indexOf(fruta);
-  const resultado = index !== -1
-    ? `A fruta '${fruta}' está na posição ${index}.`
-    : `'${fruta}' não foi encontrada.`;
-  document.getElementById('saida').textContent = resultado;
-}
-
-function mostrarJoin() {
-  const resultado = "join(', '): " + frutas.join(', ');
-  document.getElementById('saida').textContent = resultado;
-}
-
-function mostrarSlice() {
-  const fatiado = frutas.slice(1, 3);
-  document.getElementById('saida').textContent = "slice(1, 3): " + JSON.stringify(fatiado);
-}
-
-function fazerSplice() {
-  frutas.splice(1, 1);
-  atualizarLista();
-  document.getElementById('saida').textContent = "splice(1, 1) aplicado.";
-}
-
-function mapMaiusculas() {
-  const maiusculas = frutas.map(f => f.toUpperCase());
-  document.getElementById('saida').textContent = "map (toUpperCase): " + JSON.stringify(maiusculas);
-}
-
-function filtrarGrandes() {
-  const grandes = frutas.filter(f => f.length > 4);
-  document.getElementById('saida').textContent = "filter (length > 4): " + JSON.stringify(grandes);
 }
