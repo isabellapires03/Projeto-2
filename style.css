@@ -52,3 +52,10 @@ h2{
     color: aliceblue;
 }
 
+p{
+    margin:20px;
+    padding: 14px;
+    font-size: 16px;
+    font-family: Pixelify Sans;
+    color: aliceblue; 
+}
