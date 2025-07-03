@@ -2,7 +2,6 @@ body {
   background-image:url(fundo.jpg);
   background-color: powderblue;
   background-size:cover;
-  background-position:bottom;
   font-family: Pixelify Sans;
   padding:55px;
   display:flex;
