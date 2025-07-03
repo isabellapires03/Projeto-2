@@ -1,3 +1,17 @@
+function dizerOla() {
+  let nome = document.getElementById("nome").value;
+  let ola = document.getElementById("ola");
+  let resultado = document.getElementById("resultadoNome");
+
+  if (nome === "") {
+    resultado.textContent = "Por favor, digite seu nome.";
+  } else {
+    ola.textContent = "Olá, " + nome + "!";
+    resultado.textContent = "Nome registrado com sucesso!";
+  }
+}
+
+
 function iniciarJogoSoma() {
   let num1 = parseInt(prompt('Digite o primeiro número:'));
   let num2 = parseInt(prompt('Digite o segundo número:'));
