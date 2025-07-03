@@ -7,23 +7,29 @@ function dizerOla() {
     resultado.textContent = "Por favor, digite seu nome.";
   } else {
     ola.textContent = "Olá, " + nome + "!";
-    resultado.textContent = "Nome registrado com sucesso!";
   }
 }
 
-function iniciarJogoSoma() {
-  let num1 = parseInt(prompt('Digite o primeiro número:'));
-  let num2 = parseInt(prompt('Digite o segundo número:'));
+function iniciarJogoNumeroSecreto() {
+  alert('Seja bem-vindo!');
+  let numeroSecreto = 1;
+  let chute;
+  let tentativas = 0;
+  while (chute != numeroSecreto) {
+    chute = parseInt(prompt('Escolha um número entre 1 e 10'));
+    tentativas++;
 
-  let resultado = num1 + num2;
-  alert('A soma dos números é: "' + resultado + '"');
-  let conteudo = document.querySelector('p');
-  conteudo.innerHTML = 'Jogo Finalizado!';
-  setTimeout(function () {
-    conteudo.innerHTML = '';
-  }, 5000);
-
+    if (chute == numeroSecreto) {
+      alert(`Parabéns! Você acertou o número secreto ${numeroSecreto} na tentativa ${tentativas}.`);
+    } else if (chute > numeroSecreto) {
+      alert(`O número secreto é menor que ${chute}. Tente novamente.`);
+    } else {
+      alert(`O número secreto é maior que ${chute}. Tente novamente.`);
+    }
+  }
 }
+
+
 
 function iniciarJogoMedia() {
   alert("Bem-vindo ao Jogo da Média!");
@@ -53,21 +59,16 @@ function iniciarJogoMedia() {
   }
 }
 
-function iniciarJogoNumeroSecreto() {
-  alert('Seja bem-vindo ao nosso jogo!');
-  let numeroSecreto = 7;
-  let chute;
-  let tentativas = 0;
-  while (chute != numeroSecreto) {
-    chute = parseInt(prompt('Escolha um número entre 1 e 10'));
-    tentativas++;
+function iniciarJogoSoma() {
+  let num1 = parseInt(prompt('Digite o primeiro número:'));
+  let num2 = parseInt(prompt('Digite o segundo número:'));
 
-    if (chute == numeroSecreto) {
-      alert(`Parabéns! Você acertou o número secreto ${numeroSecreto} na tentativa ${tentativas}.`);
-    } else if (chute > numeroSecreto) {
-      alert(`O número secreto é menor que ${chute}. Tente novamente.`);
-    } else {
-      alert(`O número secreto é maior que ${chute}. Tente novamente.`);
-    }
-  }
+  let resultado = num1 + num2;
+  alert('A soma dos números é: "' + resultado + '"');
+  let conteudo = document.querySelector('p');
+  conteudo.innerHTML = 'Jogo Finalizado!';
+  setTimeout(function () {
+    conteudo.innerHTML = '';
+  }, 5000);
+
 }

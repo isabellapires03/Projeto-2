@@ -1,30 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
+<html lang="pt-BR"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3 Jogos</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&amp;display=swap" rel="stylesheet">
 </head>
 <body>
     <h1 id="ola">Olá!</h1>
 
     <main class="main">
          <div class="pasta">
-            <h1>Qual seu nome:</h1>
+            <h1>Qual seu nome?</h1>
             <p>Informe seu nome:</p>
             <input type="text" id="nome" placeholder="Digite seu nome!">
             <button class="botao" onclick="dizerOla()">OK!</button>
-            <p id="resultadoNome"></p>
         </div>
 
     <div class="pasta">
-        <button onclick="iniciarJogoSoma()">Jogo da Soma</button>
-        <button onclick="iniciarJogoMedia()">Jogo da Média</button>
         <button onclick="iniciarJogoNumeroSecreto()">Jogo do Número Secreto</button>
+        <button onclick="iniciarJogoMedia()">Jogo da Média</button>
+        <button onclick="iniciarJogoSoma()">Jogo da Soma</button>
     </div>
     </main>
 
@@ -33,5 +32,6 @@
     </footer>
 
     <script src="script.js"></script>
+
 </body>
 </html>

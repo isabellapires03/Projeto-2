@@ -4,20 +4,12 @@ body {
   background-size:cover;
   background-position:bottom;
   font-family: Pixelify Sans;
-  padding:50px;
+  padding:55px;
   display:flex;
   align-content: center;
   justify-content: flex-end;
   flex-direction: column;
   align-items: center;
-}
-
-.main{
-  height: max-content;
-    display:flex;
-    width:fit-content;
-    align-content: flex-end;
-    justify-content: center;
 }
 
 .pasta{
@@ -26,7 +18,6 @@ body {
     line-height: 0.8;
     display:flex;
     align-items:center;
-    margin:30px;
     width: auto;
     height: auto;
     border-radius: 5px;
@@ -34,18 +25,28 @@ body {
     flex-direction: column;
 }
 
+input{
+    width: 250px;
+    height:30px;
+    margin: 10px;
+    background-color: pink;
+    font-family: Pixelify Sans;
+    color: rgb(59 12 16);
+}
+
 button{
-  width: 200px;
+   width: 300px;
     height:30px;
     margin: 10px;
     font-family: Pixelify Sans;
-    color: rgb(17, 59, 12);
-  background-color: pink;
+    font-size: 15px;
+    color: aliceblue;
+   background-color: rgb(59 12 16);
 }
 h1{
     margin:10px;
     font-family: Pixelify Sans;
-    color: rgb(255, 196, 0);    
+    color: aliceblue;    
 }
 
 h2{
@@ -53,13 +54,11 @@ h2{
     padding: 14px;
     font-size: 12px;
     font-family: Pixelify Sans;
-    color: rgb(255, 196, 0);
+    color: aliceblue;
 }
 
-p{
-    margin:20px;
-    padding: 14px;
+p{    padding: 14px;
     font-size: 16px;
     font-family: Pixelify Sans;
-    color:rgb(255, 196, 0); 
+    color:aliceblue; 
 }
