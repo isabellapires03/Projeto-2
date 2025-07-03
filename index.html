@@ -1,1 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 Jogos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 id="ola">Olá!</h1>
 
+    <main class="main">
+    <div class="container">
+        <div class="pasta">
+            <h1>Formulário de Valores</h1>
+  <form id="formulario">
+    <label for="valor1">Valor 1:</label>
+    <input type="text" id="valor1" required><br>
+
+    <label for="valor2">Valor 2:</label>
+    <input type="text" id="valor2" required><br>
+
+    <label for="valor3">Valor 3:</label>
+    <input type="text" id="valor3" required><br>
+
+    <label for="valor4">Valor 4:</label>
+    <input type="text" id="valor4" required><br>
+
+    <label for="valor5">Valor 5:</label>
+    <input type="text" id="valor5" required><br>
+
+    <button type="submit">Salvar em TXT</button>
+  </form>
+
+        </div>
+
+        <div class="pasta">
+            <h1>Adivinhe o número secreto:</h1>
+            <p>Digite um número entre 0 e 9999:</p>
+            <input type="number" id="chute" placeholder="Seu chute">
+            <button class="botao" onclick="acertarNumero()">Chutar!</button>
+            <p id="resultadoChute"></p>
+        </div>
+
+        <div class="pasta">
+            <h1>Somar:</h1>
+            <p>Quer uma dica? Confira a soma do número secreto + o valor que você digitou!</p>
+            <button class="botao" onclick="somaNumeros()">Somar</button>
+            <p id="resultadoSoma"></p>
+        </div>
+    </div> 
+    </main>
+
+    <footer>
+        <h2>Feito por Isabella - 2025</h2>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
