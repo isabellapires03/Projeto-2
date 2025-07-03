@@ -1,14 +1,53 @@
 body {
-  font-family: Pixelify Sans;
-  background-color: yellow;
-  padding: 40px;
-  text-align: center;
+   font-family: Pixelify Sans;
+   padding:50px;
+    display:flex;
+    background-color: purple;
+    align-content: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
+}
+.main{
+  height: max-content;
+    display:flex;
+    width:fit-content;
+    align-content: flex-end;
+    justify-content: center;
+}
+
+.pasta{
+    font-family: Pixelify Sans;
+    font-size:15px;
+    line-height: 0.8;
+    display:flex;
+    align-items:center;
+    margin:30px;
+    width: auto;
+    height: auto;
+    border-radius: 5px;
+    justify-content: center;
+    flex-direction: column;
 }
 
 button{
-   font-family: Pixelify Sans;
-  background-color: blue;
-  padding: 40px;
-  text-align: center;
+  width: 200px;
+    height:30px;
+    margin: 10px;
+    font-family: Pixelify Sans;
+    color: purple;
+  background-color: pink;
+}
+h1{
+    margin:10px;
+    font-family: Pixelify Sans;
+    color: aliceblue;    
 }
 
+h2{
+    margin:20px;
+    padding: 14px;
+    font-size: 12px;
+    font-family: Pixelify Sans;
+    color: aliceblue;
+}
