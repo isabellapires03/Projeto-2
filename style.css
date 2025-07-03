@@ -96,7 +96,7 @@ body {
 }
 
 
-body::before {
+body{
     display: block;
     position: absolute;
     width: 100%;
